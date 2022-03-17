@@ -1,0 +1,239 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/base16/solarized-dark.min.css">
+</head>
+
+<body>
+  <script src="bundle.js"></script>
+  <h1>Programusic.js</h1>
+
+  <h2>Como o som funciona?</h2>
+
+  <div data-target="tom"></div>
+
+  <div data-target="ex11">
+    <button>▶️ Onda sem envelope</button>
+    <!-- <img
+        src="https://api.wolframalpha.com/v1/simple?appid=6Q2A42-856K2P32TH&i=plot+of+sin%5B440+pi+x%5D+for+x+from+0+to+0.05"> -->
+  </div>
+
+  <div data-target="ex12">
+    <button>▶️ Duas ondas que se somam</button>
+    <!-- <img
+        src="https://api.wolframalpha.com/v1/simple?appid=6Q2A42-856K2P32TH&i=plot+of+sin%5B440+pi+x%5D+for+x+from+0+to+0.05"> -->
+  </div>
+
+  <div data-target="ex13">
+    <button>▶️ Duas ondas que se anulam</button>
+  </div>
+
+  <h2>
+    Relação entre as notas musicais e suas frequências
+  </h2>
+
+  <div data-target="ex21">
+    <button>▶️ Lá 4</button>
+  </div>
+
+
+  <div data-target="ex22">
+    <button>▶️ Lá 5</button>
+  </div>
+
+  <div data-target="ex23">
+    <button>▶️ Lá 3</button>
+  </div>
+
+  <h2>
+    O que são Envelopes?
+  </h2>
+
+  <div data-target="CriarEnvelope"></div>
+
+  <div data-target="ex31">
+    <button>▶️ Onda com envelope de "fade-in"</button>
+  </div>
+
+  <div data-target="ex32">
+    <button>▶️ Onda com envelope de "fade-out"</button>
+  </div>
+
+  <div data-target="ex33">
+    <button>▶️ Onda com envelope de "fade-in" e "fade-out"</button>
+  </div>
+
+  <h2>
+    Construindo um instrumento: o Sino
+  </h2>
+
+  <div data-target="tocarSerieHarmonica"></div>
+
+  <div data-target="sinoPaia"></div>
+
+  <div data-target="ex41">
+    <button>▶️ Sino</button>
+  </div>
+
+  <div data-target="sino"></div>
+
+  <div data-target="ex42">
+    <button>▶️ Sino com série harmônica mais realista</button>
+  </div>
+
+  <h2>Introdução ao MIDI</h2>
+
+  <div data-target="midiParaHz"></div>
+
+  <div data-target="campainha"></div>
+
+  <!--https://www.wolframalpha.com/input?i=8.1757989156+*+2+%5E+%28n+%2F+12.0%29-->
+  <!-- https://newt.phys.unsw.edu.au/jw/notes.html#:~:text=m%20for%20the%20note%20A4,)%2F12(440%20Hz). -->
+
+  <div data-target="ex51">
+    <button>▶️ Campainha MIDI 60 (Dó 4)</button>
+  </div>
+
+  <div data-target="ex52">
+    <button>▶️ Campainha MIDI 61 (Dó# 4)</button>
+  </div>
+
+  <div data-target="ex53">
+    <button>▶️ Campainha MIDI 62 (Ré 4)</button>
+  </div>
+
+  <h2>Música: intervalos de som e silêncio</h2>
+
+  <div data-target="pausa"></div>
+
+  <div data-target="nota"></div>
+
+  <div data-target="ex61">
+    <button>▶️ Nota com pausa</button>
+  </div>
+
+  <div data-target="melodiaSimples"></div>
+
+  <div data-target="ex62">
+    <button>▶️ Melodia simples</button>
+  </div>
+
+  <h2>Escalas</h2>
+
+  <div data-target="escala"></div>
+
+  <div data-target="maior"></div>
+
+  <div data-target="ex71">
+    <button>▶️ Escala maior</button>
+  </div>
+
+  <div data-target="ex72">
+    <button>▶️ Escala Maior em Dó</button>
+  </div>
+
+  <div data-target="menor"></div>
+
+  <div data-target="ex73">
+    <button>▶️ Escala Menor em Dó</button>
+  </div>
+
+  <div data-target="blues"></div>
+
+  <div data-target="ex74">
+    <button>▶️ Escala Blues em Dó</button>
+  </div>
+
+  <div data-target="pentatônica"></div>
+
+  <div data-target="ex75">
+    <button>▶️ Escala Pentatônica em Dó</button>
+  </div>
+
+  <div data-target="egípcia"></div>
+
+  <div data-target="ex76">
+    <button>▶️ Escala Egípcia em Dó</button>
+  </div>
+
+  <div data-target="cromática"></div>
+
+  <div data-target="ex77">
+    <button>▶️ Escala Cromática em Dó</button>
+  </div>
+
+  <h2>MACHINE LEARNING... ou não</h2>
+
+  <div data-target="melodiaAleatória"></div>
+
+  <div data-target="ex81">
+    <button>▶️ Melodia Aleatória na escala Cromática de Dó</button>
+  </div>
+
+  <div data-target="ex82">
+    <button>▶️ Melodia Aleatória na escala Maior de Dó</button>
+  </div>
+
+  <div data-target="ex83">
+    <button>▶️ Melodia Aleatória na escala Menor de Dó</button>
+  </div>
+
+  <div data-target="ex84">
+    <button>▶️ Melodia Aleatória na escala Pentatônica de Dó</button>
+  </div>
+
+  <div data-target="ex85">
+    <button>▶️ Melodia Aleatória na escala Egípcia de Dó</button>
+  </div>
+
+  <h2>Melodias "mais realistas", com durações e pausas variadas</h2>
+
+  <div data-target="doReMiFa"></div>
+  
+  <div data-target="melodia"></div>
+
+  <div data-target="ex91">
+    <button>▶️ Dó-Ré-Mi</button>
+  </div>
+
+  <div data-target="ex92">
+    <button>▶️ Dó-Ré-Mi - com uma relação matemática - 10 semi-tons a menos</button>
+  </div>
+
+  <h2>O que é uma Partitura?</h2>
+  
+  <div data-target="FrereJacques"></div>
+  
+  <div data-target="partituraNoTempo"></div>
+
+  <div data-target="ex101">
+    <button>▶️ Frère Jacques - ou, MEU LANCHINHO</button>
+  </div>
+
+  <div data-target="ex102">
+    <button>▶️ Frère Jacques dark bizarro (mais grave e mais lento)</button>
+  </div>
+
+  <h2>MOZARTZINHO DE LEVE</h2>
+
+  <div data-target="piano"></div>
+
+  <div data-target="ex111">
+    <button>▶️ Usando um Piano sampleado</button>
+  </div>
+
+  <div data-target="ex112">
+    <button>▶️ Frère Jacques no Piano</button>
+  </div>
+
+  <div data-target="EineKleineNachtmusik"></div>
+
+  <div data-target="melodiaPiano"></div>
+
+  <div data-target="ex113">
+    <button>▶️ Eine Kleine Nachtmusik</button>
+  </div>
+
+</body>
+
+</html>
