@@ -1,23 +1,23 @@
 import * as Tone from 'tone'
+import Reveal from 'reveal.js'
 import hljs from 'highlight.js'
+
+import 'reveal.js/dist/reveal.css'
+import 'reveal.js/dist/theme/black.css'
+
+import 'highlight.js/styles/base16/solarized-dark.css'
 
 function tom(frequencia, duracao = 0.1) {
   new Tone.Synth().toDestination().triggerAttackRelease(frequencia, duracao)
 }
 
-const envelopeNulo = new Tone.AmplitudeEnvelope({
-  attack: 0,
-  decay: 0,
-  sustain: 1,
-  release: 0
-})
 function tomSemEnvelope(frequencia, duracao) {
-  // const envelopeNulo = new Tone.AmplitudeEnvelope({
-  //   attack: 0,
-  //   decay: 0,
-  //   sustain: 1,
-  //   release: 0
-  // })   
+  const envelopeNulo = new Tone.AmplitudeEnvelope({
+    attack: 0,
+    decay: 0,
+    sustain: 1,
+    release: 0
+  })   
   tomComEnvelope(frequencia, duracao, envelopeNulo)
 }
 
@@ -57,12 +57,8 @@ function ex23() {
   tomSemEnvelope(220, 1)
 }
 
-function CriarEnvelope(options) {
-  return new Tone.AmplitudeEnvelope(options)
-}
-
 function ex31() {
-  tomComEnvelope(440, 2, CriarEnvelope({
+  tomComEnvelope(440, 2, new Tone.AmplitudeEnvelope({
     attack: 1,
     decay: 0,
     sustain: 1,
@@ -71,7 +67,7 @@ function ex31() {
 }
 
 function ex32() {
-  tomComEnvelope(440, 2, CriarEnvelope({
+  tomComEnvelope(440, 2, new Tone.AmplitudeEnvelope({
     attack: 0,
     decay: 0,
     sustain: 1,
@@ -80,7 +76,7 @@ function ex32() {
 }
 
 function ex33() {
-  tomComEnvelope(440, 2, CriarEnvelope({
+  tomComEnvelope(440, 2, new Tone.AmplitudeEnvelope({
     attack: 1,
     decay: 0,
     sustain: 1,
@@ -149,11 +145,12 @@ function ex53() {
 }
 
 function pausa(segundos) {
-  const hora = Tone.now()
+  const hora = Date.now()
+  const milisegundos = segundos * 1000
   let horaAtual = null
   do {
-    horaAtual = Tone.now()
-  } while (horaAtual - hora < segundos)
+    horaAtual = Date.now()
+  } while (horaAtual - hora < milisegundos)
 }
 
 function nota(tomMidi, pausaEmSegundos, instrumento) {
@@ -173,14 +170,14 @@ function ex61() {
 }
 
 function melodiaSimples(tons, pausaEntreNotas = 0.5) {
-  tons.forEach(tom => nota(tom, pausaEntreNotas))
+  tons.forEach(tom => nota(tom, pausaEntreNotas, campainha))
 }
 
 function ex62() {
   melodiaSimples([50, 51, 52, 53, 54, 55, 56, 57])
-  pausa(3)
+  pausa(2)
   melodiaSimples([57, 56, 55, 54, 53, 52, 51, 50])
-  pausa(3)
+  pausa(2)
   melodiaSimples([50, 51, 52, 53, 54, 55, 56, 57, 56, 55, 54, 53, 52, 51, 50])
 }
 
@@ -346,15 +343,15 @@ function FrereJacques(tonica) {
     { tom: fá, duracao: 1 },
     { tom: sol, duracao: 2 },
 
-    { tom: sol, duracao: 3 / 4 },
-    { tom: la, duracao: 1 / 4 },
+    { tom: sol, duracao: 3/4 },
+    { tom: la, duracao: 1/4 },
     { tom: sol, duracao: 1/2 },
     { tom: fá, duracao: 1/2 },
     { tom: mi, duracao: 1 },
     { tom: dó, duracao: 1 },
 
-    { tom: sol, duracao: 3 / 4 },
-    { tom: la, duracao: 1 / 4 },
+    { tom: sol, duracao: 3/4 },
+    { tom: la, duracao: 1/4 },
     { tom: sol, duracao: 1/2 },
     { tom: fá, duracao: 1/2 },
     { tom: mi, duracao: 1 },
@@ -460,25 +457,25 @@ function EineKleineNachtmusik() {
 
     { tom: "G4", duracao: 1/2 },
     { tom: "F4", duracao: 1/2 },
-    { tom: "F4", duracao: 1.5 },
+    { tom: "F4", duracao: 3/2 },
     { tom: "A5", duracao: 1/2 },
-
     { tom: "C5", duracao: 1/2 },
     { tom: "F4", duracao: 1/2 },
+
     { tom: "A5", duracao: 1/2 },
     { tom: "G4", duracao: 1/2 },
-    { tom: "G4", duracao: 1.5 },
+    { tom: "G4", duracao: 3/2 },
     { tom: "B5", duracao: 1/2 },
-
     { tom: "A5", duracao: 1/2 },
     { tom: "G4", duracao: 1/2 },
+
     { tom: "G4", duracao: 1/2 },
     { tom: "F4", duracao: 1/2 },
-    { tom: "F4", duracao: 1.5 },
+    { tom: "F4", duracao: 3/2 },
     { tom: "A5", duracao: 1/2 },
-
     { tom: "C5", duracao: 1/2 },
     { tom: "F4", duracao: 1/2 },
+
     { tom: "G4", duracao: 1/2 },
     { tom: "G4", duracao: 1/2 },
     { tom: "G4", duracao: 1/4 },
@@ -744,9 +741,14 @@ function initializeCodeBlocks() {
   hljs.highlightAll();
 }
 
+function initializeReveal() {
+  Reveal.initialize()
+}
+
 function initializeApp(_event) {
   initializeEvents()
   initializeCodeBlocks()
+  initializeReveal()
 }
 
 document.addEventListener('DOMContentLoaded', initializeApp)
