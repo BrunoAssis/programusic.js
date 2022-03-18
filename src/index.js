@@ -249,7 +249,7 @@ function melodiaAleatória(tons, duracaoTotal, pausa = 0.3) {
   let duracao = 0
   while (duracao < duracaoTotal) {
     const tomAleatório = tons[Math.floor(Math.random() * tons.length)];
-    nota(tomAleatório, pausa)
+    nota(tomAleatório, pausa, campainha)
     duracao += pausa
   }
 }
